@@ -1,0 +1,118 @@
+import java.util.Scanner;
+
+public class Game {
+	static double d;
+	static double e;
+	static double a;
+	static double b;
+	static double c;
+	static int f;
+	public static void main(String[] args) {
+		int pilihan;
+		String iyes;
+		boolean iyey= true;
+		while(iyey) {
+			
+			
+			System.out.println("Selamat Datang di Game Matematika");
+			System.out.println("Kuberikan kau poin 100, setiap 1 jawaban yang salah nilai akan berkurang 20, jika benar bertambah 20");
+			System.out.println("Selamat Mengerjakan :)");
+			System.out.println("Silahkan pilih mode operasinya");
+			System.out.println("1. Penambahan(+)");
+			System.out.println("2. Pengurangan(-)");
+			System.out.println("3. Perkalian(x)");
+			System.out.print("Masukkan Pilhan Anda = ");
+			
+			Scanner keyboard = new Scanner(System.in);
+			pilihan=keyboard.nextInt();
+			
+			
+			if (pilihan==1) {
+				int g= 100;
+				for(int i=0;i<5;i++)  {
+					d= (Math.random() * 10);
+					e= (Math.random() * 10);
+					a = Math.round(d)+Math.round(e);
+					System.out.print(Math.round(d));
+					System.out.print("+");
+					System.out.print(Math.round(e));
+					System.out.print("=");
+					
+					Scanner kampret = new Scanner(System.in);
+					f=kampret.nextInt();
+					if(f==Math.round(a)) {
+						System.out.println("siip");
+						System.out.println("nilaimu bertambah 20 poin sekarang nilaimu "+ (g+20)+" poin");
+						g+=20;
+					}
+					else {
+						System.out.println("noob");
+						System.out.println("nilaimu berkurang 20 poin sekarang nilaimu "+ (g-20)+" poin");
+						g-=20;
+					}
+				
+				}
+			
+			}
+				
+			else if (pilihan==2) {
+				for(int i=0;i<5;i++)  {
+					d= (Math.random() * 10);
+					e= (Math.random() * 10);
+					if (d>e) {
+						b = Math.round(d)-Math.round(e);
+						System.out.print(Math.round(d));
+						System.out.print("-");
+						System.out.print(Math.round(e));
+						System.out.print("=");
+					}
+					else {
+						b = Math.round(e)-Math.round(d);
+						System.out.print(Math.round(e));
+						System.out.print("-");
+						System.out.print(Math.round(d));
+						System.out.print("=");
+					}
+					
+					Scanner kampret = new Scanner(System.in);
+					f=kampret.nextInt();
+					if(f==b) {
+						System.out.println("siip");
+					
+					}
+					else {
+						System.out.println("noob");
+					}
+				}
+			}
+			else if (pilihan==3) {
+				for(int i=0;i<5;i++)  {
+					d= (Math.random() * 10);
+					e= (Math.random() * 10);
+					c = Math.round(d)*Math.round(e);
+					System.out.print(Math.round(d));
+					System.out.print("-");
+					System.out.print(Math.round(e));
+					System.out.print("=");
+					
+					Scanner kampret = new Scanner(System.in);
+					f=kampret.nextInt();
+					if(f==Math.round(c)) {
+						System.out.println("siip");
+					}
+					else {
+						System.out.println("noob");
+					}
+				}
+		
+			}
+			System.out.print("apakah anda ingin bermain lagi?(y/n)");
+			Scanner uyik = new Scanner(System.in);
+			iyes=uyik.nextLine();
+			if(iyes.equalsIgnoreCase("n")) {
+				iyey = false;
+			}
+			
+		}
+	}
+}
